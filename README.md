@@ -1,52 +1,84 @@
 # 🧠 Face Identification & Emotion Recognition with Grad-CAM (Streamlit)
 
-This repository presents an **interactive Streamlit application** for **face identification and emotion recognition**, enhanced with **explainable AI (XAI)** using **Grad-CAM visualizations**.
-
-The project demonstrates how **convolutional neural networks (CNNs)** make predictions on facial images and provides visual explanations highlighting **which facial regions influence identity and emotion predictions**.
+An interactive Streamlit application for **face identification and emotion recognition**, enhanced with **explainable AI (XAI)** using **Grad-CAM** visualizations.
 
 ---
 
-## ✨ Features
+## 🧠 Models
 
-- **Face Identification** using a CNN trained on the **Labeled Faces in the Wild (LFW)** dataset  
-- **Emotion Recognition** using a **pretrained CNN model**  
-- **Explainability with Grad-CAM**
-  - Identity Grad-CAM (grayscale saliency overlay)
-  - Emotion Grad-CAM (colored heatmap overlay)
-  - Identity Grad-CAM (heatmap-only view)
-- **Interactive Streamlit Interface**
-  - Step-through testing using a **Next image** button
-  - Side-by-side comparison of explanations
-- **Visualization-safe preprocessing**
-  - Contrast enhancement (CLAHE) applied **only for display**
-  - Model inputs remain unchanged for correct learning and inference
+```text
+Identity Classification Model
 
----
+- Custom CNN trained from scratch
 
-## 🖼️ Application Output
+Architecture:
+- Convolution + MaxPooling layers
+- Fully connected layers with Dropout
 
-For each test image, the application displays:
+Optimizer: Adam  
+Loss: Categorical Cross-Entropy
 
-1. **Identity Grad-CAM (grayscale overlay)**  
-2. **Emotion Grad-CAM (colored overlay)**  
-3. **Identity Grad-CAM (heatmap only)**  
 
-This layout allows inspection of:
-- Model attention patterns
-- Differences between identity and emotion cues
-- Explainability on a per-sample basis
+Emotion Recognition Model
 
----
+- Pretrained CNN
+- Predicts 7 emotion classes:
+  Angry, Disgust, Fear, Happy, Sad, Surprise, Neutral
+- Used only for inference
+🔍 Explainability (Grad-CAM)
+text
+Copy code
+Gradient-weighted Class Activation Mapping (Grad-CAM) is used to:
 
-## 📊 Datasets
+- Highlight important facial regions influencing predictions
+- Compare attention for identity vs emotion
+- Provide both overlay and standalone heatmap views
 
-### Labeled Faces in the Wild (LFW)
-- Used for **face identification**
-- Grayscale benchmark dataset
-- Automatically downloaded using `scikit-learn`
+The visualization strategy follows best practices used in explainable AI research.
+🚀 Installation
+text
+Copy code
+Install dependencies:
+pip install streamlit tensorflow scikit-learn opencv-python numpy
 
-### Emotion Recognition Model
-- Pretrained CNN (FER-style architecture)
-- Loaded locally from:
-  ```text
-  emotion_model.h5
+
+Prepare the emotion model:
+Place the pretrained emotion model in the project root:
+
+emotion_model.h5
+
+
+Run the application:
+streamlit run app.py
+📁 Repository Structure
+text
+Copy code
+.
+├── app.py                 # Main Streamlit application
+├── emotion_model.h5       # Pretrained emotion recognition model
+├── README.md              # Project documentation
+🧪 How to Use
+text
+Copy code
+1. Launch the Streamlit app
+2. Click "Train Identity Model"
+3. Navigate through test samples using "Next image"
+4. Observe:
+   - Identity prediction
+   - Emotion prediction
+   - Grad-CAM explanations
+🎓 Intended Use
+text
+Copy code
+This repository is suitable for:
+
+- Explainable AI (XAI) demonstrations
+- Computer vision education
+- Research prototypes
+- Academic projects and theses
+⚠️ Limitations
+text
+Copy code
+- LFW is a benchmark dataset with limited visual quality
+- Identity recognition performance is constrained by dataset size
+- Emotion recognition depends on pretrained model quality
