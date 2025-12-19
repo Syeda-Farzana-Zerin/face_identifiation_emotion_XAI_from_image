@@ -27,7 +27,7 @@ Emotion Recognition Model
 - Used only for inference
 
 
-Gradient-weighted Class Activation Mapping (Grad-CAM) is used to:
+## Gradient-weighted Class Activation Mapping (Grad-CAM) is used to:
 
 - Highlight important facial regions influencing predictions
 - Compare attention for identity vs emotion
@@ -35,6 +35,7 @@ Gradient-weighted Class Activation Mapping (Grad-CAM) is used to:
 
 The visualization strategy follows best practices used in explainable AI research.
 
+## Installation
 
 Install dependencies:
 pip install streamlit tensorflow scikit-learn opencv-python numpy
@@ -46,7 +47,7 @@ Place the pretrained emotion model in the project root:
 emotion_model.h5
 
 
-Run the application:
+##Run the application:
 streamlit run app.py
 
 ##Repository
