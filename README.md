@@ -5,7 +5,7 @@ An interactive Streamlit application for **face identification and emotion recog
 ---
 
 
-![Application Screenshot](Face1.jpg)
+![Application Screenshot](face1.jpg)
 
 ```text
 Identity Classification Model
