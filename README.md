@@ -25,9 +25,8 @@ Emotion Recognition Model
 - Predicts 7 emotion classes:
   Angry, Disgust, Fear, Happy, Sad, Surprise, Neutral
 - Used only for inference
-🔍 Explainability (Grad-CAM)
-text
-Copy code
+
+
 Gradient-weighted Class Activation Mapping (Grad-CAM) is used to:
 
 - Highlight important facial regions influencing predictions
@@ -35,9 +34,8 @@ Gradient-weighted Class Activation Mapping (Grad-CAM) is used to:
 - Provide both overlay and standalone heatmap views
 
 The visualization strategy follows best practices used in explainable AI research.
-🚀 Installation
-text
-Copy code
+
+
 Install dependencies:
 pip install streamlit tensorflow scikit-learn opencv-python numpy
 
@@ -50,16 +48,14 @@ emotion_model.h5
 
 Run the application:
 streamlit run app.py
-📁 Repository Structure
-text
-Copy code
+
+##Repository
 .
 ├── app.py                 # Main Streamlit application
 ├── emotion_model.h5       # Pretrained emotion recognition model
 ├── README.md              # Project documentation
-🧪 How to Use
-text
-Copy code
+
+##How to use
 1. Launch the Streamlit app
 2. Click "Train Identity Model"
 3. Navigate through test samples using "Next image"
@@ -67,18 +63,10 @@ Copy code
    - Identity prediction
    - Emotion prediction
    - Grad-CAM explanations
-🎓 Intended Use
-text
-Copy code
+
 This repository is suitable for:
 
 - Explainable AI (XAI) demonstrations
 - Computer vision education
 - Research prototypes
 - Academic projects and theses
-⚠️ Limitations
-text
-Copy code
-- LFW is a benchmark dataset with limited visual quality
-- Identity recognition performance is constrained by dataset size
-- Emotion recognition depends on pretrained model quality
